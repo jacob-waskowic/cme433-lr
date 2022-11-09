@@ -3,9 +3,9 @@ module approx_mult
     parameter NUM_BITS = 3
 )
 (
-    logic [NUM_BITS-1:0] a,
-    logic [NUM_BITS-1:0] b,
-    logic [2*NUM_BITS-1:0] y 
+    input logic [NUM_BITS-1:0] a,
+    input logic [NUM_BITS-1:0] b,
+    output logic [2*NUM_BITS-1:0] y 
 );
 
 generate
@@ -13,7 +13,7 @@ generate
     begin
         logic p00, p10, p20;
         logic p01, p11, p21;
-        logic p22, p12, p22;
+        logic p02, p12, p22;
 
         logic c0, c1, c2, c3, c4, c5, c6;
 
@@ -65,8 +65,8 @@ generate
         approx_ha ha_2
         (
             .a(y2_tmp),
-            .b(~p22),
-            .s(y[2])
+            .b(~p02),
+            .s(y[2]),
             .cout(c2)
         );
 
@@ -166,7 +166,7 @@ generate
     end
     else
     begin
-        assert(0);
+       
     end
 endgenerate
 
