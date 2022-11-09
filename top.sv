@@ -18,7 +18,7 @@ assign b2 = b[4:2];
 assign b3 = b[1:0];
 assign y = {mult_out_exact, 5'd0} + {mult_out_approx_three_bits, 2'd0} + mult_out_approx_two_bits;
 
-exact_mult exact_mult(
+exact_mult0 exact_mult(
     .a(a1),
     .b(b1),
     .y(mult_out_exact)
