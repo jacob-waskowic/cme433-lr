@@ -2,8 +2,8 @@
 
 module exact_mult_tb;
 
-logic [2:0] a, b;
-logic [5:0] y, y_exact;
+logic signed [2:0] a, b;
+logic signed [5:0] y, y_exact;
 logic correct = 1'b1;
 logic clk;
 
@@ -23,7 +23,7 @@ initial #1000 $stop;
 
 
 // Instantiate parity modules
-exact_mult(.a(a), .b(b), .y(y));
+exact_mult mult1(.a(a), .b(b), .y(y));
 assign y_exact = a * b;
 
 // Verify parity_davio module by comparing to conventional

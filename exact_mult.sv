@@ -18,7 +18,11 @@ module exact_mult(
 	assign p22 = a[2] & b[2];
 	
 	
-	assign y = {1'b1, ~p20, p10, p00} + {~p21, p11, p01, 1'b0} + {p22, ~p12, ~p02, 2'b0};
+	always @ *
+	begin
+	y = {1'b1, ~p20, p10, p00} + {~p21, p11, p01, 1'b0} + {p22, ~p12, ~p02, 2'b0};
+	y = {~y[5], y[4:0]};
+	end
 	
 endmodule
 		
