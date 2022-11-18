@@ -1,4 +1,4 @@
-module approx_mult
+module exact_mult
 (
     input logic signed [7:0] a,
     input logic signed [7:0] b,
@@ -31,7 +31,7 @@ always_comb
 assign y[0] = p[0][0];
 
 //y[1]
-approx_ha ha1
+exact_ha ha1
 (
     .a(p[0][1]),
     .b(p[1][0]),
@@ -40,7 +40,7 @@ approx_ha ha1
 );
 
 //y[2]
-approx_fa fa1
+exact_fa fa1
 (
     .a(p[2][0]),
     .b(p[1][1]),
@@ -49,7 +49,7 @@ approx_fa fa1
     .s(y2_tmp)
 );
 
-approx_ha ha2
+exact_ha ha2
 (
     .a(y2_tmp),
     .b(p[0][2]),
@@ -58,7 +58,7 @@ approx_ha ha2
 );
 
 //y[3]
-approx_fa fa2
+exact_fa fa2
 (
     .a(c2),
     .b(p[3][0]),
@@ -67,7 +67,7 @@ approx_fa fa2
     .s(y3_tmp1)
 );
 
-approx_fa fa3
+exact_fa fa3
 (
     .a(p[2][1]),
     .b(p[1][2]),
@@ -76,7 +76,7 @@ approx_fa fa3
     .s(y3_tmp2)
 );
 
-approx_ha ha3
+exact_ha ha3
 (
     .a(y3_tmp1),
     .b(y3_tmp2),
@@ -85,7 +85,7 @@ approx_ha ha3
 );
 
 //y[4]
-approx_fa fa4
+exact_fa fa4
 (
     .a(c4),
     .b(c5),
@@ -94,7 +94,7 @@ approx_fa fa4
     .s(y4_tmp1)
 );
 
-approx_fa fa5
+exact_fa fa5
 (
     .a(p[4][0]),
     .b(p[3][1]),
@@ -103,7 +103,7 @@ approx_fa fa5
     .s(y4_tmp2)
 );
 
-approx_fa fa6
+exact_fa fa6
 (
     .a(y4_tmp2),
     .b(p[1][3]),
@@ -112,7 +112,7 @@ approx_fa fa6
     .s(y4_tmp3)
 );
 
-approx_ha ha4
+exact_ha ha4
 (
     .a(y4_tmp1),
     .b(y4_tmp3),
@@ -121,7 +121,7 @@ approx_ha ha4
 );
 
 //y[5]
-approx_fa fa7
+exact_fa fa7
 (
     .a(c7),
     .b(c8),
@@ -130,7 +130,7 @@ approx_fa fa7
     .s(y5_tmp1)
 );
 
-approx_fa fa8
+exact_fa fa8
 (
     .a(c10),
     .b(p[5][0]),
@@ -139,7 +139,7 @@ approx_fa fa8
     .s(y5_tmp2)
 );
 
-approx_fa fa9
+exact_fa fa9
 (
     .a(p[3][2]),
     .b(p[2][3]),
@@ -148,7 +148,7 @@ approx_fa fa9
     .s(y5_tmp3)
 );
 
-approx_fa fa10
+exact_fa fa10
 (
     .a(y5_tmp2),
     .b(y5_tmp3),
@@ -157,7 +157,7 @@ approx_fa fa10
     .s(y5_tmp4)
 );
 
-approx_ha ha5
+exact_ha ha5
 (
     .a(y5_tmp1),
     .b(y5_tmp4),
@@ -166,7 +166,7 @@ approx_ha ha5
 );
 
 //y[6]
-approx_fa fa11
+exact_fa fa11
 (
     .a(c11),
     .b(c12),
@@ -175,7 +175,7 @@ approx_fa fa11
     .s(y6_tmp1)
 );
 
-approx_fa fa12
+exact_fa fa12
 (
     .a(c14),
     .b(c15),
@@ -184,7 +184,7 @@ approx_fa fa12
     .s(y6_tmp2)
 );
 
-approx_fa fa13
+exact_fa fa13
 (
     .a(p[5][1]),
     .b(p[4][2]),
@@ -193,7 +193,7 @@ approx_fa fa13
     .s(y6_tmp3)
 );
 
-approx_fa fa14
+exact_fa fa14
 (
     .a(p[2][4]),
     .b(p[1][5]),
@@ -202,7 +202,7 @@ approx_fa fa14
     .s(y6_tmp4)
 );
 
-approx_fa fa15
+exact_fa fa15
 (
     .a(y6_tmp2),
     .b(y6_tmp3),
@@ -211,7 +211,7 @@ approx_fa fa15
     .s(y6_tmp5)
 );
 
-approx_ha ha6
+exact_ha ha6
 (
     .a(y6_tmp1),
     .b(y6_tmp5),
@@ -220,7 +220,7 @@ approx_ha ha6
 );
 
 //y[7]
-approx_fa fa16
+exact_fa fa16
 (
     .a(c16),
     .b(c17),
@@ -229,7 +229,7 @@ approx_fa fa16
     .s(y7_tmp1)
 );
 
-approx_fa fa17
+exact_fa fa17
 (
     .a(c19),
     .b(c20),
@@ -238,7 +238,7 @@ approx_fa fa17
     .s(y7_tmp2)
 );
 
-approx_fa fa18
+exact_fa fa18
 (
     .a(~p[7][0]),
     .b(p[6][1]),
@@ -247,7 +247,7 @@ approx_fa fa18
     .s(y7_tmp3)
 );
 
-approx_fa fa19
+exact_fa fa19
 (
     .a(p[4][3]),
     .b(p[3][4]),
@@ -256,7 +256,7 @@ approx_fa fa19
     .s(y7_tmp4)
 );
 
-approx_fa fa20
+exact_fa fa20
 (
     .a(y7_tmp4),
     .b(p[1][6]),
@@ -265,7 +265,7 @@ approx_fa fa20
     .s(y7_tmp5)
 );
 
-approx_fa fa21
+exact_fa fa21
 (
     .a(y7_tmp1),
     .b(y7_tmp2),
@@ -274,7 +274,7 @@ approx_fa fa21
     .s(y7_tmp6)
 );
 
-approx_ha ha7
+exact_ha ha7
 (
     .a(y7_tmp6),
     .b(y7_tmp5),
@@ -283,7 +283,7 @@ approx_ha ha7
 );
 
 //y[8]
-approx_fa fa22
+exact_fa fa22
 (
     .a(c22),
     .b(c23),
@@ -292,7 +292,7 @@ approx_fa fa22
     .s(y8_tmp1)
 );
 
-approx_fa fa23
+exact_fa fa23
 (
     .a(c25),
     .b(c26),
@@ -301,7 +301,7 @@ approx_fa fa23
     .s(y8_tmp2)
 );
 
-approx_fa fa24
+exact_fa fa24
 (
     .a(c28),
     .b(1'b1),
@@ -310,7 +310,7 @@ approx_fa fa24
     .s(y8_tmp3)
 );
 
-approx_fa fa25
+exact_fa fa25
 (
     .a(p[6][2]),
     .b(p[5][3]),
@@ -319,7 +319,7 @@ approx_fa fa25
     .s(y8_tmp4)
 );
 
-approx_fa fa26
+exact_fa fa26
 (
     .a(p[3][5]),
     .b(p[2][6]),
@@ -328,7 +328,7 @@ approx_fa fa26
     .s(y8_tmp5)
 );
 
-approx_fa fa27
+exact_fa fa27
 (
     .a(y8_tmp1),
     .b(y8_tmp2),
@@ -337,7 +337,7 @@ approx_fa fa27
     .s(y8_tmp6)
 );
 
-approx_fa fa28
+exact_fa fa28
 (
     .a(y8_tmp6),
     .b(y8_tmp4),
@@ -347,7 +347,7 @@ approx_fa fa28
 );
 
 //y[9]
-approx_fa fa29
+exact_fa fa29
 (
     .a(c29),
     .b(c30),
@@ -356,7 +356,7 @@ approx_fa fa29
     .s(y9_tmp1)
 );
 
-approx_fa fa30
+exact_fa fa30
 (
     .a(c32),
     .b(c33),
@@ -365,7 +365,7 @@ approx_fa fa30
     .s(y9_tmp2)
 );
 
-approx_fa fa31
+exact_fa fa31
 (
     .a(c35),
     .b(~p[7][2]),
@@ -374,7 +374,7 @@ approx_fa fa31
     .s(y9_tmp3)
 );
 
-approx_fa fa32
+exact_fa fa32
 (
     .a(p[5][4]),
     .b(p[4][5]),
@@ -383,7 +383,7 @@ approx_fa fa32
     .s(y9_tmp4)
 );
 
-approx_fa fa33
+exact_fa fa33
 (
     .a(y9_tmp3),
     .b(y9_tmp4),
@@ -392,7 +392,7 @@ approx_fa fa33
     .s(y9_tmp5)
 );
 
-approx_fa fa34
+exact_fa fa34
 (
     .a(y9_tmp1),
     .b(y9_tmp2),
@@ -402,7 +402,7 @@ approx_fa fa34
 );
 
 //y[10]
-approx_fa fa35
+exact_fa fa35
 (
     .a(c36),
     .b(c37),
@@ -411,7 +411,7 @@ approx_fa fa35
     .s(y10_tmp1)
 );
 
-approx_fa fa36
+exact_fa fa36
 (
     .a(c39),
     .b(c40),
@@ -420,7 +420,7 @@ approx_fa fa36
     .s(y10_tmp2)
 );
 
-approx_fa fa37
+exact_fa fa37
 (
     .a(~p[7][3]),
     .b(p[6][4]),
@@ -429,7 +429,7 @@ approx_fa fa37
     .s(y10_tmp3)
 );
 
-approx_fa fa38
+exact_fa fa38
 (
     .a(y10_tmp3),
     .b(p[4][6]),
@@ -438,7 +438,7 @@ approx_fa fa38
     .s(y10_tmp4)
 );
 
-approx_fa fa39
+exact_fa fa39
 (
     .a(y10_tmp1),
     .b(y10_tmp2),
@@ -448,7 +448,7 @@ approx_fa fa39
 );
 
 //y[11]
-approx_fa fa40
+exact_fa fa40
 (
     .a(c42),
     .b(c43),
@@ -457,7 +457,7 @@ approx_fa fa40
     .s(y11_tmp1)
 );
 
-approx_fa fa41
+exact_fa fa41
 (
     .a(c45),
     .b(c46),
@@ -466,7 +466,7 @@ approx_fa fa41
     .s(y11_tmp2)
 );
 
-approx_fa fa42
+exact_fa fa42
 (
     .a(p[6][5]),
     .b(p[5][6]),
@@ -475,7 +475,7 @@ approx_fa fa42
     .s(y11_tmp3)
 );
 
-approx_fa fa43
+exact_fa fa43
 (
     .a(y11_tmp1),
     .b(y11_tmp2),
@@ -485,7 +485,7 @@ approx_fa fa43
 );
 
 //y[12]
-approx_fa fa44
+exact_fa fa44
 (
     .a(c47),
     .b(c48),
@@ -494,7 +494,7 @@ approx_fa fa44
     .s(y12_tmp1)
 );
 
-approx_fa fa45
+exact_fa fa45
 (
     .a(c50),
     .b(~p[7][5]),
@@ -503,7 +503,7 @@ approx_fa fa45
     .s(y12_tmp2)
 );
 
-approx_fa fa46
+exact_fa fa46
 (
     .a(y12_tmp1),
     .b(y12_tmp2),
@@ -513,7 +513,7 @@ approx_fa fa46
 );
 
 //y[13]
-approx_fa fa47
+exact_fa fa47
 (
     .a(c51),
     .b(c52),
@@ -522,7 +522,7 @@ approx_fa fa47
     .s(y13_tmp)
 );
 
-approx_fa fa48
+exact_fa fa48
 (
     .a(y13_tmp),
     .b(~p[7][6]),
@@ -532,7 +532,7 @@ approx_fa fa48
 );
 
 //y[14]
-approx_fa fa49
+exact_fa fa49
 (
     .a(c54),
     .b(c55),
@@ -544,4 +544,4 @@ approx_fa fa49
 //y[15]
 assign y[15] = ~c56;
 
-endmodule : approx_mult
+endmodule : exact_mult
