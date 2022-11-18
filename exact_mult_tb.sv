@@ -2,8 +2,8 @@
 
 module exact_mult_tb;
 
-logic signed [2:0] a, b;
-logic signed [5:0] y, y_exact;
+logic signed [7:0] a, b;
+logic signed [15:0] y, y_exact;
 logic correct = 1'b1;
 logic clk;
 
@@ -14,8 +14,8 @@ always #0.5 clk = ~clk; // 1 MHz clock
 // Random inputs
 always @ (posedge clk)
 	begin
-		a <= $random % (2**2);
-		b <= $random % (2**2);
+		a <= $random % (2**7);
+		b <= $random % (2**7);
 	end
 
 // Simulation Length
