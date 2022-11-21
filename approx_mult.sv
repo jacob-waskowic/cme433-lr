@@ -62,7 +62,7 @@ approx_fa fa2
 (
     .a(c2),
     .b(p[3][0]),
-    .cin(c3),
+    .cin(p[1][2]),
     .cout(c4),
     .s(y3_tmp1)
 );
@@ -70,7 +70,7 @@ approx_fa fa2
 approx_fa fa3
 (
     .a(p[2][1]),
-    .b(p[1][2]),
+    .b(c3),
     .cin(p[0][3]),
     .cout(c5),
     .s(y3_tmp2)
@@ -88,15 +88,15 @@ approx_ha ha3
 approx_fa fa4
 (
     .a(c4),
-    .b(c5),
-    .cin(c6),
+    .b(p[4][0]),
+    .cin(p[1][3]),
     .cout(c7),
     .s(y4_tmp1)
 );
 
 approx_fa fa5
 (
-    .a(p[4][0]),
+    .a(c5),
     .b(p[3][1]),
     .cin(p[2][2]),
     .cout(c8),
@@ -106,7 +106,7 @@ approx_fa fa5
 approx_fa fa6
 (
     .a(y4_tmp2),
-    .b(p[1][3]),
+    .b(c6),
     .cin(p[0][4]),
     .cout(c9),
     .s(y4_tmp3)
@@ -124,8 +124,8 @@ approx_ha ha4
 approx_fa fa7
 (
     .a(c7),
-    .b(c8),
-    .cin(c9),
+    .b(p[2][3]),
+    .cin(p[0][5]),
     .cout(c11),
     .s(y5_tmp1)
 );
@@ -142,7 +142,7 @@ approx_fa fa8
 approx_fa fa9
 (
     .a(p[3][2]),
-    .b(p[2][3]),
+    .b(c8),
     .cin(p[1][4]),
     .cout(c13),
     .s(y5_tmp3)
@@ -151,8 +151,8 @@ approx_fa fa9
 approx_fa fa10
 (
     .a(y5_tmp2),
-    .b(y5_tmp3),
-    .cin(p[0][5]),
+    .b(c9),
+    .cin(y5_tmp3),
     .cout(c14),
     .s(y5_tmp4)
 );
